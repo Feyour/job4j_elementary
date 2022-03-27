@@ -1,5 +1,7 @@
 package ru.job4j.condition;
 
+import jdk.dynalink.NamedOperation;
+
 public class LogicNot {
 
     public static boolean isEven(int num) {
@@ -19,10 +21,10 @@ public class LogicNot {
     }
 
     public static boolean notEvenAndPositive(int num) {
-        return !isEven(num) && isPositive(num);
+        return notEven(num) && isPositive(num);
     }
 
     public static boolean evenOrNotPosotive(int num) {
-        return isEven(num) || !isPositive(num);
+        return isEven(num) || notPositive(num);
     }
 }
