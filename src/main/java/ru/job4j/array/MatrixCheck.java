@@ -1,13 +1,14 @@
 package ru.job4j.array;
 
 public class MatrixCheck {
-    public static int sum(int[][] array) {
-        int rsl = 0;
-        for (int row = 0; row < array.length; row++) {
-            for (int cell = 0; cell < array[row].length; cell++) {
-                rsl += array[row][cell];
+    public static boolean monoHorizontal(char[][] board, int row) {
+        boolean result = true;
+        for (int i = 0; i < board.length; i++) {
+            if (board[row][i] != 'X') {
+                result = false;
+                break;
             }
         }
-        return rsl;
+        return result;
     }
 }
