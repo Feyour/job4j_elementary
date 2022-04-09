@@ -1,4 +1,5 @@
 package ru.job4j.array;
+
 import java.util.Arrays;
 
 public class Machine {
@@ -7,17 +8,14 @@ public class Machine {
         int[] rsl = new int[100];
         int size = 0;
         int sum = money - price;
-        for (int index = 0; index < coins.length; index++) {
-            while (sum > 0) {
-                if (sum >= coins[index]) {
-                    rsl[size] = coins[index];
-                    sum -= coins[index];
-                    size += 1;
-                } else {
-                    break;
-                }
+        for (int coin : coins) {
+            while (sum > 0 && sum >= coin) {
+                rsl[size] = coin;
+                sum -= coin;
+                size += 1;
             }
         }
         return Arrays.copyOf(rsl, size);
     }
 }
+
