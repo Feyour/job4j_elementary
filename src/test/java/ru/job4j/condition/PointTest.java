@@ -1,4 +1,6 @@
 package ru.job4j.condition;
+import static java.lang.Math.sqrt;
+
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -12,6 +14,15 @@ public class PointTest {
         Point b = new Point(2, 0);
         double actual = a.distance(b);
         assertEquals(expected, actual, 0.01);
+    }
+
+    @Test
+    public void whenDistance3D() {
+        Point a = new Point(0, 0, 0);
+        Point b = new Point(0, 2, 2);
+        double expected = sqrt(2 * 2 + 2 * 2);
+        double result = a.distance3d(b);
+        assertEquals(expected, result, 0.001);
     }
 
     @Test
